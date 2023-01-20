@@ -28,4 +28,4 @@ hs.hotkey.bind(ctrl_alt, ",", function() hs.grid.snap(getWin()) end)
 hs.hotkey.bind(ctrl_alt, "space", function() hs.grid.maximizeWindow() end)
 
 -- minimize window
-hs.hotkey.bind(ctrl_alt, ".", function() hs.grid.set(getWin(), '0,0 1x1'); end)
+hs.hotkey.bind(ctrl_alt, ".", function() hs.grid.set(getWin(), '0,0 1x1'); end) 
