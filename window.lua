@@ -7,16 +7,38 @@ function getWin()
 end
 
 -- move window
-hs.hotkey.bind(ctrl_alt, "left", function() hs.grid.pushWindowLeft() end)
-hs.hotkey.bind(ctrl_alt, "right", function() hs.grid.pushWindowRight() end)
-hs.hotkey.bind(ctrl_alt, "up", function() hs.grid.pushWindowUp() end)
-hs.hotkey.bind(ctrl_alt, "down", function() hs.grid.pushWindowDown() end)
+hs.hotkey.bind(
+  ctrl_alt,
+  "left",
+  function()
+    hs.grid.resizeWindowThinner()
+    hs.grid.pushWindowLeft()
+  end)
+hs.hotkey.bind(
+  ctrl_alt,
+  "right",
+  function()
+    hs.grid.resizeWindowThinner()
+    hs.grid.pushWindowRight()
+  end)
+hs.hotkey.bind(
+  ctrl_alt,
+  "up",
+  function()
+    hs.grid.resizeWindowShorter()
+    hs.grid.pushWindowUp()
+  end)
+hs.hotkey.bind(
+  ctrl_alt,
+  "down",
+  function()
+    hs.grid.resizeWindowShorter()
+    hs.grid.pushWindowDown()
+  end)
 
 -- resize window
-hs.hotkey.bind(ctrl_alt, "i", function() hs.grid.resizeWindowShorter() end)
-hs.hotkey.bind(ctrl_alt, "k", function() hs.grid.resizeWindowTaller() end)
-hs.hotkey.bind(ctrl_alt, "j", function() hs.grid.resizeWindowThinner() end)
-hs.hotkey.bind(ctrl_alt, "l", function() hs.grid.resizeWindowWider() end)
+hs.hotkey.bind(ctrl_alt, "o", function() hs.grid.resizeWindowTaller() end)
+hs.hotkey.bind(ctrl_alt, "p", function() hs.grid.resizeWindowWider() end)
 
 -- move window to next screen
 hs.hotkey.bind(ctrl_alt, "/", function() local win = getWin(); win:moveToScreen(win:screen():next()) end)
@@ -28,4 +50,4 @@ hs.hotkey.bind(ctrl_alt, ",", function() hs.grid.snap(getWin()) end)
 hs.hotkey.bind(ctrl_alt, "space", function() hs.grid.maximizeWindow() end)
 
 -- minimize window
-hs.hotkey.bind(ctrl_alt, ".", function() hs.grid.set(getWin(), '0,0 1x1'); end) 
+hs.hotkey.bind(ctrl_alt, ".", function() hs.grid.set(getWin(), '0,0 1x1'); end)
