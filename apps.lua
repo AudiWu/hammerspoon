@@ -9,6 +9,6 @@ local function toggleApplication(name)
     end
   end
   
-  hs.hotkey.bind(ctrl_alt, "c", function() toggleApplication("Google Chrome") end)
-  hs.hotkey.bind(ctrl_alt, "e", function() toggleApplication("Visual Studio Code") end)
+  hs.hotkey.bind(ctrl_alt, "g", function() toggleApplication("Google Chrome") end)
+  hs.hotkey.bind(ctrl_alt, "c", function() toggleApplication("Visual Studio Code") end)
   hs.hotkey.bind(ctrl_alt, "t", function() toggleApplication("iTerm") end)
